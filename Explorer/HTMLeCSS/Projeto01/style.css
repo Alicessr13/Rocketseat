@@ -1,0 +1,59 @@
+h1 {
+    font-family: 'Inter', sans-serif;
+    /*qual a fonte*/
+    font-size: 49px;
+    /*tamanho fonte*/
+    line-height: 56px;
+    /*tamanho linha*/
+    font-weight: normal;
+    /*tipo fonte*/
+    margin-bottom: 32px;
+    /*espaçamento externo inferior*/
+}
+
+h1 span {
+    /*aplica no span dentro de h1*/
+    font-weight: bold;
+    /*tipo fonte*/
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    /*alinha o conteudo no centro*/
+    margin: 0;
+    /*por padrão o body tem margin de 8px*/
+}
+
+#hero {
+    width: 592px;
+    /*tamanho da caixa hero*/
+    margin: 0 auto 72px;
+    /* auto centraliza a caixa*/
+    /*margin: top, lateral direita, bottom, lateral esquerda*/
+}
+
+#hero img {
+    margin-bottom: 72px;
+}
+
+
+
+span,
+a {
+    /*aplica no span e no a*/
+    color: #ff9900;
+    /*cor da fonte*/
+
+}
+
+p {
+    color: #7D7987;
+    font-size: 14px;
+    line-height: 28px;
+}
+
+#footer a+a {
+    /*dentro do footer um a que tenha anterior a ele um a (o segundo a, pois tem outra a antes dele)(se tiver mais de um a com um a anterior a ele irá aplicar também)*/
+    margin-left: 28px;
+}
