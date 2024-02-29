@@ -47,7 +47,8 @@ a {
 
 }
 
-p {
+p,
+footer {
     color: #7D7987;
     font-size: 14px;
     line-height: 28px;
@@ -56,4 +57,19 @@ p {
 #footer a+a {
     /*dentro do footer um a que tenha anterior a ele um a (o segundo a, pois tem outra a antes dele)(se tiver mais de um a com um a anterior a ele irá aplicar também)*/
     margin-left: 28px;
+}
+
+.line {
+    /*linha*/
+    width: 568px;
+    height: 0;
+    margin: 0 auto 8px;
+    border: 1px #eceff2 solid;
+}
+
+#balls {
+    position: fixed; /*position padrão é o static*/
+    /*elemento fica fixo na tela (mesmo ao mexer a pagina ele fica fixo no lugar, como se criasse outra camada sobreposta a camada original )*/
+    bottom: 0px;
+    right: 0px;
 }
