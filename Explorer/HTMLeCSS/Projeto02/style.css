@@ -1,0 +1,27 @@
+body{
+    margin: 0px; /*fora da caixa, padding = prenche dentro da caixa */
+}
+
+/*display flex = as caixas dentro da caixa principal ficam uma ao redor da outra*/
+
+.page{
+    border: 1px solid red;
+    width: 1000px;
+    margin: 65px auto 0px;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /*pode alinhar elementos horizontalmente dentro de um container flexível*/
+    align-items: center;
+    margin-bottom: 55px;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    gap: 48px; /*da pra usar quando uitliza flex, espaço entre os elementos*/
+    margin: 0px;
+    padding: 0px;
+}
