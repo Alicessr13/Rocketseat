@@ -1,27 +1,118 @@
-body{
-    margin: 0px; /*fora da caixa, padding = prenche dentro da caixa */
+body {
+    margin: 0px;
+    /*fora da caixa, padding = prenche dentro da caixa */
+    font-family: "Open Sans", sans-serif;
+    background: linear-gradient(180deg, rgba(227, 255, 248, 0)82.02%, rgba(35 255 200 / 38%)100%);
+    /*linear gradient é uma função, deg = graus, rgba também é uma função(primeiro o red, segundo green, terceiro blue e quarto a transparencia que vai de 0 até 1*/
+    min-height: 100vh; /*viewport = toda a area visivel, viewport height = vh*/
+    /*min = minimo, recomendado usar o min para se a página aumentar não ser somente 100vh*/
 }
+
 
 /*display flex = as caixas dentro da caixa principal ficam uma ao redor da outra*/
 
-.page{
-    border: 1px solid red;
+.page {
     width: 1000px;
-    margin: 65px auto 0px;
+    margin: 0px auto;
+    padding-top: 65px;
 }
 
-nav{
+nav {
     display: flex;
     flex-direction: row;
-    justify-content: space-between; /*pode alinhar elementos horizontalmente dentro de um container flexível*/
+    justify-content: space-between;
+    /*pode alinhar elementos horizontalmente dentro de um container flexível*/
     align-items: center;
     margin-bottom: 55px;
 }
 
-ul{
+ul {
     list-style: none;
     display: flex;
-    gap: 48px; /*da pra usar quando uitliza flex, espaço entre os elementos*/
+    gap: 48px;
+    /*da pra usar quando uitliza flex, espaço entre os elementos*/
     margin: 0px;
     padding: 0px;
+    font-family: "Mulish", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #1f1534;
+}
+
+ul li a{
+    opacity: 0.5;/*opacidade vai de 0 até 1*/
+}
+
+ul li a:hover {
+    /*hover = quando passar o mouse em cima*/
+    font-weight: bold;
+    opacity: 1;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h1 {
+    font-family: "Mulish", sans-serif;
+    font-size: 49px;
+    line-height: 56px;
+    color: #1f1534;
+    ;
+    font-weight: normal;
+    width: 490px;
+}
+
+h1 span {
+    color: #89C5CC;
+    font-weight: bold;
+}
+
+section p {
+    color: #7D7987;
+    font-size: 14px;
+    line-height: 28px;
+    margin: 40px 0px;
+}
+
+button {
+    text-transform: uppercase;
+    font-family: "Open Sans", sans-serif;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    /*arredondamento da borda*/
+    background: #69B99D;
+    padding: 14px 32px;
+    gap: 10px;
+    color: white;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    /*quando o cursor estiver em cima do elemento vai ser pointer(mão em vez de seta)*/
+}
+
+button:hover {
+    background: #44866f;
+}
+
+footer {
+    font-size: 14px;
+    line-height: 28px;
+    text-align: center;
+    margin-top: 80px;
+}
+
+footer a {
+    font-weight: bold;
+}
+
+#balls{
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
 }
