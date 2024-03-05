@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <label for="titulo">Título do evento</label>
+    <!--label = especificar o campo e para acessibilidade (for = id facilita para o leitor de tela identificar que os 2 elementos estão relacionados)-->
+    <input type="text" name="titulo" id="titulo" />
+    <!--input = receber dados, type = tipo da entrada de dados, 
+    nome = importante para enviar o dado posteriormente, id = identificador unico do campo-->
+
+    <select name="" id=""> <!--campo de seleção com opções-->
+        <option value="music">Musica</option>
+        <option value="movie">Filme</option>
+    </select>
+
+    <textarea name="" id="" cols="30" rows="10"></textarea> <!--area de texto, cols = colunas, rows = linhas -->
+
+    <br>
+    <br>
+    <form action="" method=""><!--dentro do form tem os inputs-->
+        <!--action = diz pra onde o formulario vai ser enviado, se não colocar nada ele fica no mesmo lugar-->
+        <!--method = get(recebe e envia recursos/dados) post(envia recursos/dados) se não colocar nenhum ele utiliza o get (utiliza o protocolo http) -->
+        <input type="text" name="q">
+        <input type="hidden" name>
+        <input type="submit" value="pesquisar">
+    </form> 
+</body>
+
+</html>
