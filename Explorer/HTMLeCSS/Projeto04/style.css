@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*rem = unidade de medida flexivel*/
+:root {/*é um seletor CSS especial que representa o elemento raiz do documento HTML*/
+    font-size: 65.5%;
+    /*65.5% de 16px = 10px, dai os calculos do rem são feitos sobre 10px deixando mais facil*/
+}
+
+body {
+    background: #ECE9FD;
+    padding: 6.0rem 2.3rem 6.6rem;
+    font-family: "Epilogue", sans-serif;
+    font-size: 1.6rem;
+}
+
+main{
+    max-width: 33.0rem;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 4.0rem;
+    /*rem = root em, 1rem = unidade de medida setada no navegador 
+    (divide o valor desejado pelo valor padrão exemplo: quero 40px divide 40 por 16 = 2.5em, tamanho de texto padrão 16px)*/
+    line-height: 4.8rem;
+    color: #090039;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+}
+
+main p:first-child{
+    color: #7158EF;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 3.2rem;
+    margin-bottom: 1.7rem;
+}
+
+h1 + p{/*p que tem anterior a ele um h1*/
+    color: rgba(10,0,57,0.64);
+    line-height: 3.2rem;
+    margin-bottom: 3.2rem;
+}
+
+a{
+    color: #090039;
+    text-decoration: none; 
+}
+
+a:hover{
+    color: #7158EF;
+    font-weight: bold;
+}
+
+ul{
+    list-style: none;
+    margin-top: 7.2rem;
+}
+
+ul li{
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    color: #090039;
+    max-width: 25.7rem;
+    display: flex;
+    gap: 3.8rem;
+}
+
+ul li span{
+    font-weight: 800;
+    font-size: 7.2rem;
+    line-height: 8.0rem;
+    letter-spacing: -2px;
+}
+
+ul li + li{
+    margin-top: 3.2rem;
+}
+
+/*media queries*/
+@media (min-width: 700px){/*estilos customizados para quando ativar essa regra*/
+    body{
+        padding: 8rem;
+    }
+    
+    main{
+        display: flex;
+        gap: 10rem;
+        max-width: 1200px
+    }
+
+    main > div{
+        max-width: 484px;
+    }
+
+    ul li{
+        gap: 5.3rem;
+        max-width: 450px;
+        align-items: center;
+    }
+
+   
+}
