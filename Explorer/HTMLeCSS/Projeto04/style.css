@@ -6,8 +6,8 @@
 
 /*rem = unidade de medida flexivel*/
 :root {/*é um seletor CSS especial que representa o elemento raiz do documento HTML*/
-    font-size: 65.5%;
-    /*65.5% de 16px = 10px, dai os calculos do rem são feitos sobre 10px deixando mais facil*/
+    font-size: 62.5%;
+    /*62.5% de 16px = 10px, dai os calculos do rem são feitos sobre 10px deixando mais facil*/
 }
 
 body {
