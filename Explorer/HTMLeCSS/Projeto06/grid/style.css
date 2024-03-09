@@ -1,0 +1,32 @@
+#app{
+    display: grid;/*todos os elementos são controlados pela div pai*/
+    /*grid cria primeiro as rows = linhas (conforme os elementos existentes)*/
+    /*todo grid vai ter um conteiner: o pai e itens: o(s) filho(s)*/
+    /*o pai recebe o grid e muda o comportamento dos filhos*/
+    /*grid e semelhante ao excel*/
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    height: 100vh;
+  }
+
+  /*
+  propriedades container pai:
+   grid-template (grid-template-columns, grid-template-rows, grid-template-areas)
+  
+  grid-template-columns:
+        grid-template-columns: 100px 200px 300px; (define o tamanho de cada coluna)
+        grid-template-columns: 1fr 1fr 1fr; ( 1fr = fração, separa as colunas pela fração baseado no tamanho total)
+        grid-template-columns: repeat(3,1fr); (primeiro valor = quantas vezes quer que repita, segundo valor = o tamanho das repetições)
+   
+  grid-template-rows:
+        grid-template-rows: 200px 1fr 2fr 1fr; (define o tamanho de cada linha)
+        */
+  
+  #app>div{
+    border: 1px solid red;
+  }
+  
+  span{
+    border: 1px solid blue;
+  }
