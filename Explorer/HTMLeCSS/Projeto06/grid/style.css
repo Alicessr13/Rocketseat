@@ -1,16 +1,31 @@
-#app{
-    display: grid;/*todos os elementos são controlados pela div pai*/
-    /*grid cria primeiro as rows = linhas (conforme os elementos existentes)*/
-    /*todo grid vai ter um conteiner: o pai e itens: o(s) filho(s)*/
-    /*o pai recebe o grid e muda o comportamento dos filhos*/
-    /*grid e semelhante ao excel*/
+#app {
+  display: grid;
+  /*todos os elementos são controlados pela div pai*/
+  /*grid cria primeiro as rows = linhas (conforme os elementos existentes)*/
+  /*todo grid vai ter um conteiner: o pai e itens: o(s) filho(s)*/
+  /*o pai recebe o grid e muda o comportamento dos filhos*/
+  /*grid e semelhante ao excel*/
 
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    height: 100vh;
-  }
+  /*grid-template-columns: repeat(3, 1fr);*/
+  /*colunas*/
+  /*grid-template-rows: repeat(3, 1fr);*/
+  /*linhas*/
 
-  /*
+  grid-template-areas:
+    "a b b"
+    "a b b"
+    "a c d";
+  /*utiliza nomes para definir o grid e depois declara esses nomes nos filhos*/
+
+  gap: 20px;
+  /*espaçamento entre as caixas do grid*/
+  row-gap: 30px; /*espaçamento somente entre as linhas*/
+  column-gap: 50px; /*espaçamento somente entre as colunas*/
+
+  height: 100vh;
+}
+
+/*
   propriedades container pai:
    grid-template (grid-template-columns, grid-template-rows, grid-template-areas)
   
@@ -22,11 +37,58 @@
   grid-template-rows:
         grid-template-rows: 200px 1fr 2fr 1fr; (define o tamanho de cada linha)
         */
-  
-  #app>div{
-    border: 1px solid red;
-  }
-  
-  span{
-    border: 1px solid blue;
-  }
+
+
+/*
+  propriedades do container filho:
+    grid-column: 
+        grid-column-start; (qual coluna começa)
+        grid-column-end; (qual coluna termina)
+    
+    grid-row:
+        grid-row-start;
+        grid-row-end;
+  */
+
+#app>* {
+  border: 1px solid red;
+}
+
+#app header {
+  grid-area: a;
+}
+
+#app main {
+  grid-area: b;
+}
+
+/*
+#app header{
+  grid-row-start: 1; /começa na linha divisória virtual 1 das linhas/
+  grid-row-end: 4; /termina na linha divisória virtual 4 das linhas/
+}
+
+#app main{
+  grid-column: 2/4; /*começa na linha virtual 1 e termina na linha virtual 3 das colunas/
+  grid-row: 1/3; /*começa na linha virtual 1 e termina na linha virtual 3 das linhas/
+}
+*/
+
+/*
+#app header {
+  grid-column-start: 1;
+  /começa na linha divisória virtual 1/
+  grid-column-end: 4;
+  /termina na linha divisória virtual 4/
+}
+
+#app main {
+  grid-column: 1/3;
+  /começa na linha virtual 1 e termina na linha virtual 3/
+}
+
+#app footer {
+  grid-column: 1/4;
+  /começa na linha virtual 1 e termina na linha virtual 4/
+}
+*/
