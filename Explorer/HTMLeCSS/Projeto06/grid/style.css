@@ -19,10 +19,20 @@
 
   gap: 20px;
   /*espaçamento entre as caixas do grid*/
-  row-gap: 30px; /*espaçamento somente entre as linhas*/
-  column-gap: 50px; /*espaçamento somente entre as colunas*/
+  row-gap: 30px;
+  /*espaçamento somente entre as linhas*/
+  column-gap: 50px;
+  /*espaçamento somente entre as colunas*/
 
   height: 100vh;
+
+  /*
+    pode ser usado as propriedades juntas com o grid-template:
+    grid-template: 
+    "a b b" 80px /*primeiro o areas, depois o rows/
+    "a b b" 40px
+    "a c d" 50px / 80px 1fr 2fr; /*o que vier depois da barra é colums/
+  */
 }
 
 /*
@@ -48,6 +58,13 @@
     grid-row:
         grid-row-start;
         grid-row-end;
+  */
+
+/*
+  propriedades auto (trabalha automaticamente, loop):
+    grid-auto-flow: 1fr 2fr 3fr ; /por padrão é row(linha), atribui 1fr depois 2fr depois 3fr e volta para o 1fr 2fr e sucessivamente
+    grid-auto-rows: max-content;
+    grid-auto-colums: 50px 100px;
   */
 
 #app>* {

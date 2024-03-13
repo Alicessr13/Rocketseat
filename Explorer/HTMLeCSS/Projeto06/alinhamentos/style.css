@@ -1,0 +1,64 @@
+/*
+#PROPRIEDADES DE ALINHAMENTO:
+
+  Em containers:
+    /conteudo do elemento
+    aligh-content
+    justify-content
+    place-content
+
+    /itens do elemento
+    aligh-itens
+    justify-itens
+    place-self
+
+  Em itens:
+    /o proprio elemento
+    aligh-self
+    justify-self
+    place-self
+*/
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.grid{
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 8px;
+
+    /*start, end, center, space-around, space-evenly, space-between*/
+    /*align-content: space-around; direção das linhas*/
+    /*justify-content: space-evenly; direção das colunas*/
+    /*place-content: center; aligh e justify ao mesmo tempo*/
+
+
+    /*start, end, center, space-around, space-evenly, space-between*/
+    /*align-content: space-around; direção das linhas (eixo y)*/
+    /*justify-content: space-evenly; direção das colunas (eixo x)*/
+    /*place-content: center; aligh e justify ao mesmo tempo*/
+
+
+    /*stretch(esticado). start(começo), center, end*/
+    align-items: flex-start; /*eixo y*/
+    justify-items: start; /*eixo x*/
+    place-items: center; /*aligh e justify ao mesmo tempo*/
+}
+
+.grid > div{
+    background-color: cornflowerblue;
+}
+
+.grid div:nth-child(2){
+    /*o proprio item*/
+    align-self: end;
+    justify-self: center;
+    place-self: end; /*aligh e center*/
+    }
