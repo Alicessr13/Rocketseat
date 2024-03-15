@@ -1,0 +1,68 @@
+body {
+    background-color: pink;
+}
+
+.square {
+    width: calc(3rem + 1rem);
+    /*utilizado para calculos em css, para + e - pode ser utilizado unidades de medidas difeentes, para * e /  usa numero inteiro*/
+    height: 4rem;
+    background-color: aliceblue;
+    opacity: .1;
+}
+
+.square {
+    animation-name: move, blink;
+    /*nome da animação que vai ser utilizada*/
+
+    animation-duration: 1s, 200ms;
+    /*duração da animação*/
+
+    animation-fill-mode: forwards; /*forwards = atribui as propriedades do final da animação*/
+    /*backwards = atribui as propriedades do inicio da animação*/
+    /*both = atribui as propriedades dos 2*/
+
+    animation-direction: alternate; /*reverse = animação fica ao contrario*/
+    /*alternate = alterna sempre que a animação acontecer novamente, primeiro normal depois o reverso*/
+    /*alternate-reverse = primeiro o reverse e depois o normal*/
+
+    animation-iteration-count: infinite; /*2 = animação acontece 2 vezes*/
+    /*acontece infinitamente*/
+
+    animation-delay: 2s; /*animação começa depois de 2 segundos*/
+
+    animation-timing-function: linear;/*como a animação se comporta no decorrer do tempo*/
+    /*linear, ease, cubic-bezier(), steps */
+
+    /* tudo em uma unica linha
+    animation: move 1s forwards alternate infinite, blink 100ms infinite;
+    */
+}
+
+.square:hover{ /*quando passar o mouse em cima*/
+    animation-play-state: paused; /*estado da animação, paused = para*/
+}
+
+/*toda animação no css tem inicio e fim*/
+
+/*para definir animações utiliza @keyframes, o nome pode ser qualquer 1*/
+@keyframes move {
+
+    /*inicio: (from)*/
+    0% {}
+
+    /*fim: (to)*/
+    /*100% vai ate o final da animação*/
+    /*50% termina a animação e volta ao zero, volta as propriedades iniciais*/
+    100%{
+        /*deixa o square do outro lado da tela*/
+        transform: translateX(calc(100vw - 100% - 16px));
+    }
+
+    /*quando a animação termina volta as propriedades que ja existiram*/
+}
+
+@keyframes blink{
+    50%{
+        opacity: 1;
+    }
+}
