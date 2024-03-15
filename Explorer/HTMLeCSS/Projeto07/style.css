@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*width e height incluem o tamanho padding size e a propriedade border*/
+}
+
+:root {
+    font-size: 62.5%;
+    /*deixa a fonte em 10px, o rem é com base no valor padrão deixar em 10 facilita*/
+    /*pois se definirmos que o font-size desse elemento será de 18px, então 1rem = 18px, 2rem = 36px e assim por diante*/
+
+    /*variaveis em css, depois do -- pode ser qualquer nome e qualquer valor*/
+    --color-base-gray-100: #f5f5f5;
+    --color-base-white: #ffffff;
+    --color-base-gray-900: #202020;
+    --color-base-gray-300: #8d8d99;
+    --color-base-grey-500: #3d3d3d;
+
+    font-family: "Mulish", sans-serif;
+}
+
+body {
+    font-size: 1.6rem;
+    /*deixa a fonte com 1.6rem (variavel com base no tamanho do navegador) = 16px*/
+    background-color: var(--color-base-white);
+    color: var(--color-base-gray-900);
+}
+
+#app>* {
+    /*para todos elementos dentro de app*/
+}
+
+#app {
+    display: grid;
+    grid-template-rows: max-content 1fr max-content;
+    /*header com tamanho do conteudo, main com 1fr(o resto disponivel), footer com o tamanho do conteudo*/
+    height: 100vh;
+    /*altura da area visivel do navegador*/
+}
+
+.container {
+    padding: 1.6rem 3.2rem;
+    width: min(112rem, 100%);
+    /*o elemento terá uma largura igual ao menor valor entre 112 rem (unidades relativas ao tamanho da fonte raiz) e 100% da largura do contêiner pai, 
+    o que garante que o elemento não ultrapasse 112 rem em largura, mas pode ser menor se necessário para caber dentro do contêiner pai.
+    */
+    margin: 0 auto;
+}
+
+main {
+    overflow-y: scroll;
+    /*somente o main vai ter rolagem os outros elementos vão ficar fixos*/
+    /*overflow (transbordamento) vertical de um elemento, especificamente, que uma barra de rolagem vertical deve ser exibida quando o conteúdo do elemento transborda sua área disponível na direção vertical.*/
+    background-color: var(--color-base-gray-100);
+}
+
+header,
+nav,
+nav ul
+{
+    display: flex;
+    align-items: center;
+    gap: 7.2rem;
+    font-weight: 900;
+}
+
+header form{
+    flex: 1; /*prenche o espaço disponivel para ele*/
+}
+
+nav ul{
+    list-style: none;
+    font-size: 1.8rem;
+    color: var(--color-base-gray-300);
+}
+
+ul li.active{
+    color: var(--color-base-gray-900); 
+}
+
+.input-wrapper label{
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;/*para esconder o label*/
+}
+
+.input-wrapper input{
+    width: 100%;
+    padding: 1.6rem;
+    background-color: var(--color-base-gray-100);
+    border: none;
+    border-radius: .6rem;
+    font-size: 1.6rem;
+
+    font-family: "Mulish", sans-serif;
+    font-weight: 600;
+}
+
+.input-wrapper input::placeholder{
+    opacity: 0.56;
+    color: var(--color-base-grey-500);
+}
+
+.avatar{
+    width: 4.2rem;
+    height: 4.2rem;
+    object-fit: cover; /*cobre o espaço*/
+    border-radius: 50%;
+}
+
+main h1{
+    font-size: 2.4rem;
+    padding-top: 1.6rem;
+}
+
+.gallery{
+    margin-top: 3.2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.2rem;
+}
+
+.item img{
+    width: 100%;
+    aspect-ratio: 16/9; /*proporção da imagem*/
+    object-fit: cover; 
+
+}
+
+footer p{
+    text-align: center;
+    padding: 1.6rem;
+    font-weight: 600;
+}
