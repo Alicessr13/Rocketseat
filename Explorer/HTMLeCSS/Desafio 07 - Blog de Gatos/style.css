@@ -60,6 +60,8 @@ header input{
     border: none;
     border-radius: 4px;
     width: 100%;
+    max-width: 2000px;
+    box-sizing: border-box;
 }
 
 header label{
@@ -136,6 +138,25 @@ ul li img{
     padding-top: 2.2rem;
 }
 
+.lado{
+    display: flex;
+    gap: 0.8rem;
+}
+
+.lado img{
+    filter: grayscale(100%);
+}
+
+#like:checked + label img {
+    /* Aplica um efeito visual na imagem quando o botão está marcado */
+    filter: none;
+  }
+
+  #unlike:checked + label img {
+    /* Aplica um efeito visual na imagem quando o botão está marcado */
+    filter: none;
+  }
+
 
 @media(min-width: 1024px){
     .conteudo{
@@ -156,3 +177,36 @@ ul li img{
     }
 
 }
+
+.img1{
+    --delay: .4s;
+    animation: appear .4s var(--delay) backwards;
+}
+
+.seila{
+    --delay: .6s;
+    animation: appear .4s var(--delay) backwards;
+}
+
+.cont1 p{
+    --delay: .8s;
+    animation: appear .4s var(--delay) backwards;
+}
+
+.seila2{
+    --delay: .4s;
+    animation: appear .4s var(--delay) backwards;
+}
+
+ul li{
+    --delay: .6s;
+    animation: appear .4s var(--delay) backwards;
+}
+
+@keyframes appear{
+    0%{
+        opacity: 0;
+        transform: scale(0.7);
+    }
+}
+
