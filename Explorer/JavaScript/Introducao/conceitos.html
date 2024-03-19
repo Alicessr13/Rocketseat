@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indrodução Conceitos</title>
+</head>
+<body>
+    <script>
+/* #JavaScript core
+
+Linguagem de programação que roda no navegador do usuário(front-end)
+
+Roda também no computador (back-end)
+
+O que pode ser feito? 
+    Aplicações web, mobile(React Native), desktop(Electron)*/
+
+console.log('bem vindos ao starter') //função console.log() para imprimir uma mensagem no console do navegador
+// ou do ambiente de execução JavaScript 
+
+/*
+ #tipos de dados
+
+    String = cadeia de caracteres, para escrever precisa usar "" ou '' ou `` no começo e ao final do texto
+    Ex: console.log('bem vindos ao starter')
+
+    para utilizar "" dentro do texto coloca '' ou `` em volta e vice versa ex: console.log('bem vindos "ao" starter') 
+
+    `` permite multi linha e colocar expressões dentro da string EX:
+        console.log(`
+        bem vindos 
+        starter
+        ${1+1}
+        `)
+
+
+    Number:
+        Numeros positivos e negativos
+        inteiros = 33, reais = 12.5, NaN = Not a Number, Infinity = infinito
+
+        console.log(33), console.log(33 + 12.4). console.log(12.5 / 12), console.log(12.5 / "afes") = NaN
+        console.log(12.5 === Infinity) = false, console.log(Infinity) = Infinity
+
+    Boolean
+        somente 2 valores, true e false, verdadeiro ou falso
+
+        console.log(true), console.log(false)
+
+    Undefined
+        indefinido, algo que não vai existir
+
+    Null
+        nulo, objeto que não tem nada dentro, existe mas não tem nada dentro
+
+    Object
+        objeto, dado estrutural, todo objeto possui propriedades/atributos (Altura, Peso, Largura, Cor)
+        e funcionalidades/metodos(correr, escrever)
+
+        { propriedade: "valor"}
+
+        Ex: 
+            console.log(
+                {
+                    name: "alice",
+                    idade: 20,
+                    andar: function(){
+                        console.log("Andar")
+                    }
+                }
+            )
+
+    Array (Vetores)
+        Uma lista, um agrupamento de dados
+
+        ["Alice",20]
+
+        Ex:
+            console.log(
+                [
+                    "leite",
+                    "Ovos",
+                    2,
+                    3
+                ]
+            )
+
+
+    Conforme o ECMAScript (orgão que padroniza o javascript) temos 9 tipos de dados:
+        Divididos em primitive, structural, structural primitive
+
+        Primitives:
+            String, Number, Boolean, undefined, Symbol, BigInt
+            Um tipo primitivo não é um objeto e seu valor é imutavel 
+
+        Structural:
+            Object(Array, Map, Set, Date, ...) e Function
+            Tem uma estrutura, recebe atributos e metodos 
+
+        Structural Primitive:
+            Null
+    
+            
+    Variaveis
+        Nomes simbólicos para receber algum valor, também chamado de identifier/identificadores
+
+        3 palavras reservadas para criar uma variável:
+            var 
+            let
+            const
+
+ */
+
+var clima = "Quente" //declarando uma variavel que recebe o valor "Quente", const não pode alterar o valor após declaração
+clima = 35 //novo valor para clima, funciona para var ou let
+console.log(clima) //imprimindo a varivel no console
+
+/*
+    JS é uma linguagem fracamente tipada (variaveis não precisam ter um tipo previamente definido) 
+    e dinamica (pode mudar o seu tipo)
+
+*/
+console.log(typeof clima) //typeof informa o tipo da variavel 
+
+/*
+    Scope
+        Escopo determina a visibilidade de alguma variavel
+
+        bloco statement, declaração de bloco, 
+            js //inicia o bloco
+            {
+                //código dentro do bloco
+            }//fecha o bloco
+
+            o bloco criará um novo escopo(block-scoped)
+*/
+
+//var é global e também local, poderá funcionar fora de um escopo de bloco
+
+    console.log('Existe x antes do bloco? ', x) //undefined
+    //variavel existe mas não foi atribuido valor
+    //hoisting
+    { 
+        var x = 0
+    }   
+
+    console.log('Existe x depois do bloco? ', x)//0
+    //variavel existe e foi atribuido valor
+
+//const e let são locais e só funcionam no escopo onde foi criada
+
+    //console.log('Existe y antes do bloco? ', y) //erro de referencia
+    //y não existe no escopo global
+    // não tem hoisting
+    { 
+        //console.log('Existe y no bloco? ', y) //erro cannot access Y
+        let y = 0
+        console.log('Existe y no bloco? ', y) 
+    }
+
+    //console.log('Existe y depois do bloco? ', y) //erro de referencia
+    
+    //se a variavel for declarada em um escopo anterior ela funciona dentro de outro escopo
+    let z = 1
+
+    {
+        z = 0
+    }
+
+    console.log('Valor de z: ',z)
+
+/*
+
+Para criar nomes: 
+    JS é case-sensitive e aceita cadeia de caracteres unicode
+
+    Posso:
+        Iniciar com esses caracteres especiais: $ _
+        Iniciar com letras
+        Iniciar com acentos
+        Letras maísculas e minúsculas fazem diferença
+
+    Não posso: 
+        Iniciar com números
+        Colocar espaços vazios no nome
+
+    Ideal:
+        Nomes com sentido
+        Que explique o que a variável é ou faz 
+        camelCase
+        snake_case
+        Escrever em inglês
+*/
+    </script>
+</body>
+</html>
