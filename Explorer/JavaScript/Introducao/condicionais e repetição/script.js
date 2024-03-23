@@ -106,7 +106,9 @@ while(true){
     i++
 }
 
-//for of
+//for of, é usado para iterar sobre os elementos de um array:
+//iterar refere-se ao ato de percorrer uma sequência de elementos, 
+//como itens em uma lista, caracteres em uma string, chaves em um dicionário, entre outros
 let name = 'Alice'
 let names = ['João','Paulo','Pedro']
 
@@ -118,7 +120,7 @@ for(let name of names){
     console.log(name)
 }
 
-//for in
+//for in, enquanto o for...of itera sobre os valores de um objeto iterável, como os elementos de um array, o for...in itera sobre as propriedades enumeráveis de um objeto.
 let person ={
     name: 'john',
     age: 30,

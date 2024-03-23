@@ -88,7 +88,7 @@ function Person(name){
     }
 }
 
-const mayk = new Person("Mayk")
-const joao = new Person("Joao")
+const mayk = new Person("Mayk") //instanciando um objeto
+const joao = new Person("Joao") //todo objeto person tem os atributos e metodos de person
 console.log(mayk)
 console.log(joao.walk)
