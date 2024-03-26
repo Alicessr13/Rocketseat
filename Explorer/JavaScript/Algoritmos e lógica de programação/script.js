@@ -39,6 +39,7 @@ alert('Divisão: '+div);
 alert('Resto divisão: '+restDiv);
 */
 
+/* MEDIA DO ALUNO
 let nome = prompt('Qual o nome do(a) aluno(a)? ')
 
 let nota1 = prompt('Primeira nota: ')
@@ -62,3 +63,15 @@ function media(nome,num1, num2, num3){
 }
 
 media(nome, nota1, nota2,nota3)
+*/
+
+let items = []
+
+for(let item = 0; item < 10; item ++){
+
+    let itemName = prompt('Digite o item '+ (item + 1))
+
+    items[item] = itemName
+}
+
+alert(items)
