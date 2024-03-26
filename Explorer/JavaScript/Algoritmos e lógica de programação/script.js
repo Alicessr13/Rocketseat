@@ -1,4 +1,4 @@
-/*
+/* PERGUNTA O NOME E RETORNA O NOME
 let nome = prompt("Qual o seu nome?") //abre uma caixa com um campo de pergunta
 
 //sempre que algo vai mudar é necessário uma variavel
@@ -7,7 +7,8 @@ let nome = prompt("Qual o seu nome?") //abre uma caixa com um campo de pergunta
 alert("Ola "+nome) //função que abre uma caixa no navegador
 */
 
-/*
+/*SOMA 2 NUMEROS
+
 let num1 = prompt('Primeiro número: ')
 let num2 = prompt('Segundo número: ')
 
@@ -16,6 +17,8 @@ let result = (Number(num1) + Number(num2))/2
 alert("Resultado final: "+result);
 //alert("Resultado final: "+ ( (Number(num1) + Number(num2))/2 ) )
 */
+
+/* Solicita 2 numeros e faz os calculos matematicos basicos
 
 let num1 = prompt('Digite o primeiro número: ')
 let num2 = prompt('Digite o segundo número: ')
@@ -34,3 +37,28 @@ alert('Subtração: '+sub);
 alert('Multiplicação: '+multi);
 alert('Divisão: '+div);
 alert('Resto divisão: '+restDiv);
+*/
+
+let nome = prompt('Qual o nome do(a) aluno(a)? ')
+
+let nota1 = prompt('Primeira nota: ')
+let nota2 = prompt('Segunda nota: ')
+let nota3 = prompt('Terciera nota: ')
+
+nota1 = Number(nota1)
+nota2 = Number(nota2)
+nota3 = Number(nota3)
+
+function media(nome,num1, num2, num3){
+    let media = (num1+num2+num3)/3
+
+    media = media.toFixed(2)
+
+    if(media>=6){
+        return alert('Parabens '+nome+', nota '+media+' passou de semestre! ')
+    }else{
+        return alert('Não passou '+nome+', nota '+media+' precisa estudar para a recuperação! ')
+    }
+}
+
+media(nome, nota1, nota2,nota3)
