@@ -65,6 +65,7 @@ function media(nome,num1, num2, num3){
 media(nome, nota1, nota2,nota3)
 */
 
+/* LISTA DE COMPRAS
 let items = []
 
 for(let item = 0; item < 10; item ++){
@@ -75,3 +76,19 @@ for(let item = 0; item < 10; item ++){
 }
 
 alert(items)
+*/
+
+let result = prompt("Consegue adivinhar o número que eu estou pensando? Está entre 0 e 10")
+
+const ramdomNumber= Math.round(Math.random() * 10) //Math.random = gera um número aleatório
+
+//Math.ceil = arredonda para cima, Math.floor = arredonda para baixo, Math.round = arredonda para o mais proximo
+
+let xAttemps = 1;
+
+while(Number(result) != ramdomNumber){
+    result = prompt('Erro, tente novamente!')
+    xAttemps++
+}
+
+alert(`Parabéns! O número que eu pensei foi ${ramdomNumber}! Você adivinhou o número em ${xAttemps} tentativas`)
