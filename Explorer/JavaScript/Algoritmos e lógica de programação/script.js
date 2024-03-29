@@ -94,12 +94,12 @@ while(Number(result) != ramdomNumber){
 
 alert(`Parabéns! O número que eu pensei foi ${ramdomNumber}! Você adivinhou o número em ${xAttemps} tentativas`)
 */
-let option;
+let option
 
 let items = [];
 
 while (option != 3) {
-  let option = Number(
+   option = Number(
     prompt(`
     Ola, digite a opção desejada
 
@@ -108,21 +108,30 @@ while (option != 3) {
     3. Sair do programa
 
     `)
-  );
+  )
 
-  if (option == 1) {
-    let item = prompt("Digite o nome do item: ");
-    items.push(item) //adiciona o item a lista
-  } 
-  else if (option == 2) {
-      if (items.lenght == 0) {
-      alert("Não existem itens cadastrados");
-      } 
-      else {
-      alert(items);
-      }
+  switch(option){
+    case 1:
+      let item = prompt("Digite o nome do item: ");
+      items.push(item) //adiciona o item ao final da lista
+      break
+
+    case 2: 
+    	if (items.length == 0) {
+    		alert("Não existem itens cadastrados");
+      	} 
+      	else {
+      			alert(items);
+      		}
+	  	break
+
+	case 3:
+		alert('Tchau')
+		break
+
+	default: 
+		alert('Opção invalida')
+		break
   }
-  else{
-    alert('Tchau')
-  }
+
 }
