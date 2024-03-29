@@ -94,6 +94,8 @@ while(Number(result) != ramdomNumber){
 
 alert(`Parabéns! O número que eu pensei foi ${ramdomNumber}! Você adivinhou o número em ${xAttemps} tentativas`)
 */
+
+/* MENU DE OPÇÕES
 let option
 
 let items = [];
@@ -134,4 +136,51 @@ while (option != 3) {
 		break
   }
 
+}
+*/
+
+const pacientes = [
+	{
+		name: 'Alice',
+		age: 20,
+		weight: 50,
+		height: 150,
+	},
+	{
+		name: 'Luiz',
+		age: 20,
+		weight: 100,
+		height: 190,
+	},
+	{
+		name: 'Alex',
+		age: 27,
+		weight: 70,
+		height: 170,
+	}
+]
+
+//alert(paciente[0].name) //posição do array
+
+let pacientesNome = []
+
+for(let paciente of pacientes){
+	pacientesNome.push(paciente.name)
+}
+
+alert(pacientesNome)
+
+for(let i = 0; i < pacientes.length; i++){
+	//alert(`${pacientes[i].name} tem ${pacientes[i].age} pesa ${pacientes[i].weight} e tem altura de ${pacientes[i].height} cm`)
+}
+
+function imc(peso,altura){
+	 
+	let imc = (peso/((altura/100)**2)).toFixed(2) // ** = elava ao valor
+
+	return imc
+}
+
+for(let paciente of pacientes){
+	alert(`${paciente.name} tem imc de ${imc(paciente.weight,paciente.height)}`)
 }
