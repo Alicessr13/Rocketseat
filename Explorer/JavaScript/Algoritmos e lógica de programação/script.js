@@ -78,6 +78,7 @@ for(let item = 0; item < 10; item ++){
 alert(items)
 */
 
+/*JOGO DA ADIVINHAÇÃO
 let result = prompt("Consegue adivinhar o número que eu estou pensando? Está entre 0 e 10")
 
 const ramdomNumber= Math.round(Math.random() * 10) //Math.random = gera um número aleatório
@@ -92,3 +93,36 @@ while(Number(result) != ramdomNumber){
 }
 
 alert(`Parabéns! O número que eu pensei foi ${ramdomNumber}! Você adivinhou o número em ${xAttemps} tentativas`)
+*/
+let option;
+
+let items = [];
+
+while (option != 3) {
+  let option = Number(
+    prompt(`
+    Ola, digite a opção desejada
+
+    1. Cadastrar um item na lista
+    2. Mostrar o item na lista
+    3. Sair do programa
+
+    `)
+  );
+
+  if (option == 1) {
+    let item = prompt("Digite o nome do item: ");
+    items.push(item) //adiciona o item a lista
+  } 
+  else if (option == 2) {
+      if (items.lenght == 0) {
+      alert("Não existem itens cadastrados");
+      } 
+      else {
+      alert(items);
+      }
+  }
+  else{
+    alert('Tchau')
+  }
+}
