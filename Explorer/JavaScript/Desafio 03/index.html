@@ -18,20 +18,24 @@
     <main>
         <div class="inicio"> <!--inicio começo-->
 
-            <figure>
-                <img src="./assets/image11970.png" alt="">
-            </figure>
+            <div style="grid-area: b;">
+                <figure>
+                    <img src="./assets/image11970.png" alt="">
+                </figure>
+            </div>
 
-            <h1>
-                Explore sem limites
-            </h1>
-            <p>
-                Porque o aprendizado é contínuo
-            </p>
+            <div style="grid-area: a;" class="meio">
+                <h1>
+                    Explore sem limites
+                </h1>
+                <p>
+                    Porque o aprendizado é contínuo
+                </p>
 
-            <button>
-                <img src="./assets/Group24.png" alt="">
-            </button>
+                <button>
+                    <img src="./assets/Group24.png" alt="">
+                </button>
+            </div>
 
         </div><!--final começo-->
 
@@ -81,49 +85,56 @@
 
         </div> <!--final conteudo-->
 
-        <div class="final"> <!--inicio entre em contato-->
+        <div class="tamanho">
 
-            <form action="" id="myForm">
+            <div class="final"> <!--inicio entre em contato-->
 
-                <fieldset>
+                <form action="" id="myForm">
 
-                    <legend>Entre em contato</legend>
+                    <fieldset>
 
-                    <div class="inputWrapper">
+                        <legend>Entre em contato</legend>
 
-                        <label for="name">Nome</label>
-                        <input type="text" id="name" placeholder="Seu nome" class="person">
+                        <div class="inputWrapper">
 
-                    </div>
+                            <label for="name">Nome</label>
+                            <input type="text" id="name" placeholder="Seu nome" class="person">
 
-                    <div class="inputWrapper">
+                        </div>
 
-                        <label for="email">E-mail</label>
-                        <input type="text" id="email" placeholder="E-mail" class="arroba">
+                        <div class="inputWrapper">
 
-                    </div>
+                            <label for="email">E-mail</label>
+                            <input type="text" id="email" placeholder="E-mail" class="arroba">
 
-                    <div class="inputWrapper">
+                        </div>
 
-                        <label for="mensagem">Deixe sua mensagem aqui</label>
-                        <textarea name="" id="mensagem" cols="30" rows="10"
-                            placeholder="Deixe sua mensagem aqui"></textarea>
+                        <div class="inputWrapper">
 
-                    </div>
+                            <label for="mensagem">Deixe sua mensagem aqui</label>
+                            <textarea name="" id="mensagem" cols="30" rows="10" placeholder="Deixe sua mensagem aqui..."
+                                class="text"></textarea>
 
-                    <div>
-                        <input type="submit" value="Enviar mensagem" form="myForm">
-                    </div>
+                        </div>
 
-                </fieldset>
+                        <div>
+                            <input type="submit" value="Enviar mensagem" form="myForm" class="button">
+                        </div>
 
-            </form>
+                    </fieldset>
+
+                </form>
+
+
+
+            </div><!--final entre em contato-->
 
             <footer>
                 <span>© 2023 - Rocketseat Explorer</span>
             </footer>
 
-        </div><!--final entre em contato-->
+        </div>
+
 
     </main>
 </body>
