@@ -7,3 +7,11 @@ botao.addEventListener('click', () =>{
     window.scroll({top: window.innerHeight, behavior: "smooth"}) //rola a tela a partir do topo a quantidade de pixel  que tiver na tela do usuário
     //behavior: "smooth" rola a tela mais suavemente
 }) 
+
+const button = document.getElementById('button')
+
+button.addEventListener('click', () =>{
+    document.querySelector('.tamanho').scrollIntoView({behavior: "smooth"}) //rola a tela a partir do topo a quantidade de pixel  que tiver na tela do usuário
+    //behavior: "smooth" rola a tela mais suavemente
+}) 
+
