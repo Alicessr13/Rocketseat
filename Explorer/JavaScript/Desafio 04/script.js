@@ -23,15 +23,25 @@ if(typeof(variavel) === 'number'){
 */
 
 //4. Crie um script que declare uma variável e verifique se o seu valor é uma string. Se for, exiba a mensagem "É uma string", caso contrário, exiba a mensagem "Não é uma string".
-let variavel = 'a'
+/*let variavel = 'a'
 
 if(typeof(variavel) === "string"){
     alert('É uma string')
 }else{
     alert('Não é um uma string')
 }
+*/
 
 //5. Crie um script que declare uma variável e verifique se o seu valor é um booleano. Se for, exiba a mensagem "É um booleano", caso contrário, exiba a mensagem "Não é um booleano".
+let variavel = false
+
+if(typeof(variavel) === "boolean"){
+    alert('É uma booleano')
+}else{
+    alert('Não é um booleano')
+}
+
+
 //6. Crie um script que declare duas variáveis e exiba o resultado da subtração entre elas.
 //7. Crie um script que declare duas variáveis e exiba o resultado da multiplicação entre elas.
 //8. Crie um script que declare duas variáveis e exiba o resultado da divisão entre elas.
