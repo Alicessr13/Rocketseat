@@ -4,14 +4,8 @@ const botao = document.querySelector('#botao')
 //ouvidor de eventos, fica escutando o botao quando o usuário executar uma ação eele executa uma ação
 //quando o usuário clicar, executa a função
 botao.addEventListener('click', () =>{
-    window.scroll({top: window.innerHeight, behavior: "smooth"}) //rola a tela a partir do topo a quantidade de pixel  que tiver na tela do usuário
-    //behavior: "smooth" rola a tela mais suavemente
-}) 
-
-const button = document.getElementById('button')
-
-button.addEventListener('click', () =>{
-    document.querySelector('.tamanho').scrollIntoView({behavior: "smooth"}) //rola a tela a partir do topo a quantidade de pixel  que tiver na tela do usuário
+    document.querySelector('.conteudo').scrollIntoView({behavior: "smooth"})
+    //window.scroll({top: window.innerHeight, behavior: "smooth"}) //rola a tela a partir do topo a quantidade de pixel  que tiver na tela do usuário
     //behavior: "smooth" rola a tela mais suavemente
 }) 
 
