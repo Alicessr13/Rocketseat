@@ -53,15 +53,21 @@ alert(`A subtração do número ${num1} pelo ${num2} é: ${subtracao}`)
 */
 
 //7. Crie um script que declare duas variáveis e exiba o resultado da multiplicação entre elas.
-let num1 = prompt("Digite o primeiro valor")
+/*let num1 = prompt("Digite o primeiro valor")
 let num2 = prompt("Digite o segundo valor")
 
 let multiplicacao = Number(num1) * Number(num2)
 
-alert(`A subtração do número ${num1} pelo ${num2} é: ${multiplicacao}`)
+alert(`A multiplicação do número ${num1} pelo ${num2} é: ${multiplicacao}`)
+*/
 
 //8. Crie um script que declare duas variáveis e exiba o resultado da divisão entre elas.
+let num1 = prompt("Digite o primeiro valor")
+let num2 = prompt("Digite o segundo valor")
 
+let divisao = Number(num1) / Number(num2)
+
+alert(`A divisão do número ${num1} pelo ${num2} é: ${divisao}`)
 
 //9. Crie um script que declare uma variável e verifique se o seu valor é um número par. Se for, exiba a mensagem "É um número par", caso contrário, exiba a mensagem "Não é um número par".
 //10. Crie um script que declare uma variável e verifique se o seu valor é um número ímpar. Se for, exiba a mensagem "É um número ímpar", caso contrário, exiba a mensagem "Não é um número ímpar".
