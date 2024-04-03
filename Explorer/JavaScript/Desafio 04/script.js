@@ -33,17 +33,35 @@ if(typeof(variavel) === "string"){
 */
 
 //5. Crie um script que declare uma variável e verifique se o seu valor é um booleano. Se for, exiba a mensagem "É um booleano", caso contrário, exiba a mensagem "Não é um booleano".
-let variavel = false
+/*let variavel = false
 
 if(typeof(variavel) === "boolean"){
     alert('É uma booleano')
 }else{
     alert('Não é um booleano')
 }
+*/
 
 
 //6. Crie um script que declare duas variáveis e exiba o resultado da subtração entre elas.
+/*let num1 = prompt("Digite o primeiro valor")
+let num2 = prompt("Digite o segundo valor")
+
+let subtracao = Number(num1) - Number(num2)
+
+alert(`A subtração do número ${num1} pelo ${num2} é: ${subtracao}`)
+*/
+
 //7. Crie um script que declare duas variáveis e exiba o resultado da multiplicação entre elas.
+let num1 = prompt("Digite o primeiro valor")
+let num2 = prompt("Digite o segundo valor")
+
+let multiplicacao = Number(num1) * Number(num2)
+
+alert(`A subtração do número ${num1} pelo ${num2} é: ${multiplicacao}`)
+
 //8. Crie um script que declare duas variáveis e exiba o resultado da divisão entre elas.
+
+
 //9. Crie um script que declare uma variável e verifique se o seu valor é um número par. Se for, exiba a mensagem "É um número par", caso contrário, exiba a mensagem "Não é um número par".
 //10. Crie um script que declare uma variável e verifique se o seu valor é um número ímpar. Se for, exiba a mensagem "É um número ímpar", caso contrário, exiba a mensagem "Não é um número ímpar".
