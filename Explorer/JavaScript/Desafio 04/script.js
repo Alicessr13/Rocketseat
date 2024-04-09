@@ -76,7 +76,7 @@ alert(`A divisão do número ${num1} pelo ${num2} é: ${divisao}`)
 if(Number(number)%2 == 0){
     alert('O número é par')
 }else{
-    alert('O número é impar')
+    alert('Não é um número par')
 }
 */
 
@@ -86,5 +86,5 @@ let number = prompt("Digite um número: ")
 if(Number(number)%2 != 0){
     alert('O número é impar')
 }else{
-    alert('O número é par')
+    alert('Não é um número impar')
 }
