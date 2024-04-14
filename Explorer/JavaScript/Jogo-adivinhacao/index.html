@@ -16,16 +16,16 @@
 
 <body>
     <main>
-        <div class="screen1 hide">
+        <div class="screen1">
             <h1>Jogo da Adivinhação</h1>
             <p>Adivinhe um número entre 0 e 10</p>
             <form>
-                <input type="number" name="" id="">
-                <button>Tentar</button>
+                <input type="number" name="" id="inputNumber">
+                <button onclick="handleClick(event)">Tentar</button> <!--onclick = executa a função javascript ao clicar-->
             </form>
         </div>
 
-        <div class="screen2">
+        <div class="screen2 hide">
 
             <h2>Acertou em 3 vezes</h2>
 
@@ -35,6 +35,8 @@
 
 
     </main>
+
+    <script src="./main.js"></script> <!--deixar no final antes de terminar o body-->
 </body>
 
 </html>
