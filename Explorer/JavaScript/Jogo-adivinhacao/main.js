@@ -1,5 +1,5 @@
-const screen1 = document.querySelector(".screen1")
-const screen2 = document.querySelector(".screen2")
+const screen1 = document.querySelector(".screen1") //variavel que recebe seleciona a classe
+const screen2 = document.querySelector(".screen2") //variavel que recebe seleciona a classe
 
 const ramdomNumber = Math.round(Math.random()*10) //numero aleatorio
 
@@ -20,10 +20,11 @@ function handleTryClick(event){ //nome handleclick
         document.querySelector(".screen2").classList.remove("hide") //seleciona a classe screen2 e remove a classe hide
 
         document.querySelector(".screen2 h2").innerText = `Acertou em ${xAttempts} tentativas!` 
+        screen2.querySelector("h2").innerText = `Acertou em ${xAttempts} tentativas!` 
         //seleciona o h2 dento de screen2 e altera o texto de dentro
     }
 
-    inputNumber.value = ""
+    inputNumber.value = "  " //limpa o campo
 
     xAttempts++; //aumenta conforme os cliques no botão tentar
     //console.log(xAttempts)
