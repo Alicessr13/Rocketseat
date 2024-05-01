@@ -1,3 +1,5 @@
+import { Modal } from './modal.js' //precisa importar o nome da constante
+
 //variaveis
 const form = document.querySelector('form')
 const inputWeight = document.querySelector('#weight')
@@ -7,21 +9,7 @@ const inputHeight = document.querySelector('#height')
 //const modalMessage = document.querySelector('.modal .title span')
 //const modalBtnClose = document.querySelector('.modal button.close')
 
-const Modal = {
 
-    wrapper: document.querySelector('.modal-wrapper'),
-
-    message: document.querySelector('.modal .title span'),
-
-    btnClose: document.querySelector('.modal button.close'),
-
-    open: function(){
-        Modal.wrapper.classList.add('open')
-    },
-    close(){
-       Modal.wrapper.classList.remove('open')
-    }
-}
 
 
 form.onsubmit = function(event) { /**função anonima */
@@ -33,6 +21,13 @@ form.onsubmit = function(event) { /**função anonima */
     const weight = inputWeight.value
     const height = inputHeight.value
 
+    const showAlertError = notNumber(weight) || notNumber(height)
+
+    if(showAlertError){
+        console.log('mostrar o alerta de erro')
+        return; //return em uma função para a função
+    }
+
     const result = IMC(weight,height)
 
     const message = `Seu imc é de ${result}`
@@ -43,14 +38,17 @@ form.onsubmit = function(event) { /**função anonima */
     Modal.open()
 }
 
-modal.btnClose.onclick = () => {
-    //modalWrapper.classList.remove('open')
-    Modal.close()
-}
+
 
 
 function IMC(weight, height){
     return (weight / ( (height / 100) **2) ).toFixed(2)
+}
+
+function notNumber(value){
+    return isNaN(value) || value == ""
+    //is not a number, se for um número é falso (se não colocar nada fica falso também), se for outra coisa é verdadeiro
+    //por isso o value == "" se for vazio é verdadeiro
 }
 
 /**
