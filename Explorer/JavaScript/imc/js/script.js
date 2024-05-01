@@ -1,4 +1,6 @@
 import { Modal } from './modal.js' //precisa importar o nome da constante
+import { AlertError } from './alert-error.js'
+import {calculateIMC, notANumber} from './utils.js'
 
 //variaveis
 const form = document.querySelector('form')
@@ -21,15 +23,22 @@ form.onsubmit = function(event) { /**função anonima */
     const weight = inputWeight.value
     const height = inputHeight.value
 
-    const showAlertError = notNumber(weight) || notNumber(height)
+    const weightOrHeightIsNotANumber = notANumber(weight) || notANumber(height)
 
-    if(showAlertError){
-        console.log('mostrar o alerta de erro')
+    if(weightOrHeightIsNotANumber){ //se algum for verdadeiro 
+        AlertError.open()
         return; //return em uma função para a função
     }
 
-    const result = IMC(weight,height)
+    AlertError.close()
 
+    const result = calculateIMC(weight,height)
+
+    displayResultMessage(result)
+    
+}
+
+function displayResultMessage(result){
     const message = `Seu imc é de ${result}`
 
     Modal.message.innerText = message
@@ -38,18 +47,9 @@ form.onsubmit = function(event) { /**função anonima */
     Modal.open()
 }
 
-
-
-
-function IMC(weight, height){
-    return (weight / ( (height / 100) **2) ).toFixed(2)
-}
-
-function notNumber(value){
-    return isNaN(value) || value == ""
-    //is not a number, se for um número é falso (se não colocar nada fica falso também), se for outra coisa é verdadeiro
-    //por isso o value == "" se for vazio é verdadeiro
-}
+//oninput = verifica se o input está sendo alterado, se estiver vai disparar o evento
+inputWeight.oninput = () => AlertError.close()
+inputHeight.oninput = () => AlertError.close()
 
 /**
  * 
