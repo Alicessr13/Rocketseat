@@ -5,7 +5,7 @@
 }
 
 :root{
-    font-size: 62.5%;
+    font-size: clamp(40%, 1% + 2vh, 62.5%); /*minimo 40%, ideal 1% + 2vh, maximo 62.5%*/
     --hue:194;
     --bg-color: hsl(var(--hue), 5%, 7%);
     --text-color: hsl(var(--hue), 40%, 98%);
@@ -29,4 +29,40 @@ body{
 
 .flex{
     display: flex;
+}
+
+#timer{
+    font-size: 9.6rem;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+#controls{
+    margin-top: 1.6rem;
+    padding: 2.2rem 4rem;
+    gap: 1.6rem;
+    background-color: var(--controls-bg-color);
+    border-radius: 999rem;
+}
+
+button{
+    background-color: transparent;
+    border: 0;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: 6.4rem;
+}
+
+.secondary{
+    color: var(--text-color);
+}
+
+.running .ph-play-circle, /*quando dou play o pause fica visivel*/
+.running .ph-timer,
+.music-on .ph-speaker-none, /*quando a musica estiver tocando o .ph-speaker-none some */
+html:not(.running) .ph-pause-circle, /*ne não tem a classe running .ph-pause-circle some*/
+html:not(.running) .ph-stop-circle,
+html:not(.music-on) .ph-speaker-high /*se a musica não estiver tocando ph-speaker-high some*/
+{ 
+    display: none;
 }
