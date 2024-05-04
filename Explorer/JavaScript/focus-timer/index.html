@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br" class="">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description" content="Temporizador estilo pomodoro"> <!--descrição que aparece nos motores de busca-->
-    
+
     <title>FocusTimer</title>
 
     <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-svg">
@@ -13,12 +14,15 @@
     <link rel="stylesheet" href="./style.css">
 
     <script src="https://unpkg.com/@phosphor-icons/web"></script> <!--para usar icons-->
+    <script type="module" src="./source/main.js" defer></script>
+    <!--module para aceitar import e export, defer para esperar a pagina ser carregada para depois carregar o javascript-->
 </head>
+
 <body>
     <main id="app">
 
         <button id="toggle-mode">
-            <span>Ativar/desativar light mode</span>
+            <span class="sr-only">Ativar light mode</span> <!--sr-only só para leitores de tela-->
             <i class="ph-bold ph-sun"></i> <!--icone sol-->
             <i class="ph-bold ph-moon"></i> <!--icone lua-->
         </button>
@@ -30,14 +34,34 @@
         </section>
 
         <section id="controls" class="flex">
-            <button class="ph ph-play-circle">play</button>
-            <button class="ph ph-pause-circle">pause</button>
-            <button class="ph ph-timer secondary">set</button>
-            <button class="ph ph-stop-circle secondary">stop</button>
-            <button class="ph ph-speaker-none secondary">musicon</button>
-            <button class="ph ph-speaker-high">musicoff</button>
+
+            <button class="ph ph-play-circle">
+                <span class="sr-only">Iniciar contador</span>
+            </button>
+
+            <button class="ph ph-pause-circle">
+                <span class="sr-only">Pausar contador</span>
+            </button>
+
+            <button class="ph ph-timer secondary">
+                <span class="sr-only">Ajustar contador</span>
+            </button>
+
+            <button class="ph ph-stop-circle secondary">
+                <span class="sr-only">Reiniciar contador</span>
+            </button>
+
+            <button class="ph ph-speaker-none secondary">
+                <span class="sr-only">Iniciar musica</span>
+            </button>
+
+            <button class="ph ph-speaker-high">
+                <span class="sr-only">Parar musica</span>
+            </button>
+
         </section>
 
     </main>
 </body>
+
 </html>
