@@ -3,6 +3,7 @@ const buttonToggle = document.getElementById('toggle-mode')
 
 buttonToggle.addEventListener('click', (event) => {
     document.documentElement.classList.toggle('light')
+    //toggle se tiver o light tira, se não tiver adiciona
 
 
     const mode = darkMode ? 'light' : 'dark'
@@ -13,3 +14,4 @@ buttonToggle.addEventListener('click', (event) => {
 
     darkMode = !darkMode //contrario do valor atual (se for true fica false, se for false fica true)
 })
+
