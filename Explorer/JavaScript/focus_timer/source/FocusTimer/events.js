@@ -1,5 +1,6 @@
 import { controls } from "./elements.js";
-import * as actions from "./actions.js"
+import * as actions from "./actions.js";
+import * as el from "./elements.js"
 
 export function registerControls(){
     controls.addEventListener('click', (event)=>{//obsrva os clicks dos elementos do controle (controls que está em elements.js)
@@ -16,4 +17,21 @@ export function registerControls(){
         //action recebe o nome do click (dataset.action) que é o mesmo nome da função em actions, por isso actions executa a função correta
         actions[action]()
     })
+}
+
+export function setMinutes(){
+    //quando verificar que está em focus executa a função
+    el.minutes.addEventListener('focus', () =>{
+        el.minutes.textContent = ""
+    })
+
+
+    //ao colocar algum valor dentro das duas barras ele se torna uma expressão regular
+    //a expressão regular permite observar determinado cardcter ou conjunto de caracteres, como se ela fosse lendo 1 a 1
+    //dentro da expressao regular e como se fosse uma variavel
+    el.minutes.onkeypress = (event) => /\d/.test(event.key)
+
+    //event.key e a tecla que esta sendo apertada, ele testa se a tecla é o valor dentro da expressão variavel 
+    //se sim retorna true e permite escrever, se não ele não deixa escrever
+    // com o \d ele só vai deixar escrever números (se for número retorna true)
 }
