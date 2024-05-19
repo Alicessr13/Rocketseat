@@ -1,6 +1,8 @@
 import { controls } from "./elements.js";
 import * as actions from "./actions.js";
 import * as el from "./elements.js"
+import state from "./state.js";
+import { updateDisplay } from "./timer.js";
 
 export function registerControls(){
     controls.addEventListener('click', (event)=>{//obsrva os clicks dos elementos do controle (controls que está em elements.js)
@@ -34,4 +36,18 @@ export function setMinutes(){
     //event.key e a tecla que esta sendo apertada, ele testa se a tecla é o valor dentro da expressão variavel 
     //se sim retorna true e permite escrever, se não ele não deixa escrever
     // com o \d ele só vai deixar escrever números (se for número retorna true)
+
+    //blur contrario do focus, desfocado
 }
+
+    el.minutes.addEventListener('blur', (event)=>{
+        let time = event.currentTarget.textContent //pega o texto do el.minutes
+
+        time = time > 60 ? 60 : time //se time for maior que 60 deixa como 60 se não deixa o time mesmo
+
+        state.minutes = time
+        state.seconds = 0
+
+        updateDisplay() //passa a função updateDisplay
+        el.minutes.removeAttribute('contenteditable')//não vai ter mais a opção de editar
+    }) 
