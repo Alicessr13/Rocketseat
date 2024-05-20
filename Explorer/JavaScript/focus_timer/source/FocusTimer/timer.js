@@ -4,7 +4,12 @@ import * as el from './elements.js'
 
 import { reset } from "./actions.js"
 
-export function countdown(){
+import { kitchenTimer } from "./sound.js"
+
+export function countdown() {
+
+    clearTimeout(state.countdownId)
+
     if(!state.isRunning){ //se running for falso retorna
         //quando clica no botão ativa a função toggleRunning em actions, 
         //que ativa o running ou tira se clicar de novo
@@ -24,19 +29,25 @@ export function countdown(){
     
     if(minutes < 0){
         reset() //pega o reset de action, que volta o button como estava antes por tirar a classe running
+        kitchenTimer.play()
         return
     }
 
     updateDisplay(minutes,seconds)
 
     //set timeout = função que espera executar uma função depois de determinado tempo(em milissegundos)
-    setTimeout(() => countdown(), 1000 ) //recursão, quando uma função chama ela mesma (callback)
+    state.countdownId = setTimeout(() => countdown(), 1000 ) //recursão, quando uma função chama ela mesma (callback)
     //vai ficar rodando até parar, e essa função para quando o estado mudar (state)
     //sempre que criar um recursão tem que pensar como ela vai parar
+
+    //quando clica varias vezes para começar o countdown ele executa o setTimeout, isso fica acumulando timeouts e deixando mais rápido
+    //para resolver isso foi criado countdownId em state.js
+    //e quando executar o setTimeout vai guardar ele 
+    //e em cleartimeout vai zerar ele, assim vai ter sempre um novo timeout
 }
 
 export function updateDisplay(minutes, seconds){
-    minutes = minutes ?? state.minute
+    minutes = minutes ?? state.minutes
     // se minutes depois do igual for null pega o state.minutes e coloca no lugar
 
     seconds =seconds ?? state.seconds

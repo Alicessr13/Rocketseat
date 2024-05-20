@@ -1,7 +1,9 @@
+import state from "./state.js";
+
 import { controls } from "./elements.js";
 import * as actions from "./actions.js";
 import * as el from "./elements.js"
-import state from "./state.js";
+
 import { updateDisplay } from "./timer.js";
 
 export function registerControls(){
@@ -25,7 +27,7 @@ export function setMinutes(){
     //quando verificar que está em focus executa a função
     el.minutes.addEventListener('focus', () =>{
         el.minutes.textContent = ""
-    })
+   })
 
 
     //ao colocar algum valor dentro das duas barras ele se torna uma expressão regular
@@ -37,9 +39,7 @@ export function setMinutes(){
     //se sim retorna true e permite escrever, se não ele não deixa escrever
     // com o \d ele só vai deixar escrever números (se for número retorna true)
 
-    //blur contrario do focus, desfocado
-}
-
+   // blur contrario do focus, desfocado
     el.minutes.addEventListener('blur', (event)=>{
         let time = event.currentTarget.textContent //pega o texto do el.minutes
 
@@ -48,6 +48,8 @@ export function setMinutes(){
         state.minutes = time
         state.seconds = 0
 
-        updateDisplay() //passa a função updateDisplay
-        el.minutes.removeAttribute('contenteditable')//não vai ter mais a opção de editar
-    }) 
+       updateDisplay() //passa a função updateDisplay
+       el.minutes.removeAttribute('contenteditable')//não vai ter mais a opção de editar
+   }) 
+}
+
