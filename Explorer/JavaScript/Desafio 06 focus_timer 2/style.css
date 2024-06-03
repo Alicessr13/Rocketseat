@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    font-size: clamp(40%, 1% + 2vh, 62.5%); /*minimo 40%, ideal 1% + 2vh, maximo 62.5%*/
+    --back-button: #E1E1E6;
+
+}
+
+body{
+    font-family: "Roboto", sans-serif;
+    font-size: 10.3rem;
+    font-weight: bold;
+    line-height: 8rem;
+    display: grid;
+    height: 100vh;
+    place-content: center;
+}
+
+#app{
+    display: grid;
+    grid-template: 
+    "a b" 1fr;
+    gap: 5rem;
+}
+
+#timer{
+    grid-area: a;
+    display: grid;
+    place-content: center;
+}
+
+#music{
+    grid-area: b;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+#timer button{
+    background-color: transparent;
+    border: 0;
+    font-size: 5.8rem
+}
+
+#music button{
+    background-color: var(--back-button);
+    border: 0;
+    border-radius: 2rem;
+    padding: 2rem;
+    font-size: 6rem;
+}
