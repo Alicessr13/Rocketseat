@@ -24,7 +24,7 @@ body{
     display: grid;
     grid-template: 
     "a b" 1fr;
-    gap: 5rem;
+    gap: 15rem;
 }
 
 #timer{
