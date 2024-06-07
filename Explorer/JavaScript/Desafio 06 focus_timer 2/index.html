@@ -30,12 +30,18 @@
 
             <section id="controls">
 
-                <button class="ph ph-play-circle">
+                <button data-action="toggleRunning"  class="ph ph-play-circle">
                     <!--iniciar-->
                 </button>
-
-                <button class="ph ph-stop-circle">
+                <button data-action="toggleRunning"  class="ph ph-pause-circle">
                     <!--pausar-->
+                </button>
+
+                <button data-action="set" class="ph ph-clock">
+                    <!--timer-->
+                </button>
+                <button data-action="reset" class="ph ph-stop-circle">
+                    <!--parar-->
                 </button>
 
                 <button class="ph ph-plus-circle">

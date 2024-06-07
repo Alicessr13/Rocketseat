@@ -53,3 +53,22 @@ body{
     padding: 2rem;
     font-size: 6rem;
 }
+
+#minutes{
+    display: inline-block;
+    min-width: 12rem;
+}
+
+#seconds {
+    display: inline-block;
+    min-width: 11.2rem;
+}
+
+.running .ph-play-circle,
+.running .ph-clock,
+html:not(.running) .ph-pause-circle,
+html:not(.running) .ph-stop-circle
+{
+    display: none;
+}
+
