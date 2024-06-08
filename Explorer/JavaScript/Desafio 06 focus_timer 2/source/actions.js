@@ -16,3 +16,8 @@ export function set(){
     minutes.setAttribute('contenteditable', true)
     minutes.focus()
 }
+
+export function reset(){
+    state.isRunning = false
+    document.documentElement.classList.remove('running')
+}
