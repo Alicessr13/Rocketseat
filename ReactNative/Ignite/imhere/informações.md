@@ -15,4 +15,4 @@ não criar projetos em pastas sincronizadas (ex: one drive google drive)
 
 npm i = instala a pasta node_modules de novo
 
-expo start = inicia o projeto
+npx expo start = inicia o projeto
