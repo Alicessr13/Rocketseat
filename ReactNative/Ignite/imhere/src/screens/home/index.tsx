@@ -1,4 +1,4 @@
-import { Text, View, TextInput, TouchableOpacity, ScrollView } from "react-native";
+import { Text, View, TextInput, TouchableOpacity, ScrollView, FlatList } from "react-native";
 import { styles } from './styles';
 import { Participant } from "../../components/Participant";
 
@@ -38,13 +38,24 @@ export default function Home() {
                 </TouchableOpacity>
             </View>
 
-            <ScrollView showsVerticalScrollIndicator={false}>
+            {/* <ScrollView showsVerticalScrollIndicator={false}>
                 {
                     participants.map(participant => (
                         <Participant key={participant} name={participant} onRemove={() => handleParticipantRemove(participant)}></Participant>
                     ))
                 }
-            </ScrollView>
+            </ScrollView> */}
+
+            <FlatList data={participants} keyExtractor={item => item} renderItem={({ item }) => (
+                <Participant key={item} name={item} onRemove={() => handleParticipantRemove(item)}></Participant>
+            )}
+                showsVerticalScrollIndicator={false}
+                ListEmptyComponent={() => {
+                    return <Text style={styles.listEmptyText}>
+                        Adicione participantes da sua lista de presença.
+                    </Text>
+                }}
+            />
 
         </View>
         //<view> = como se fosse uma div
@@ -55,5 +66,7 @@ export default function Home() {
         //onPress = faz algo quando é pressionado 
         //por padrão o flex-direction e em column
         //ScrollView = barra de rolagem, showsVerticalScrollIndicator={false} = esconde a barra de rolagem
+        //scrollview quando não cabe na tela ele cria a barra de rolagem, carrega todos os elementos mesmo que não estejam visiveis na tela
+        //flatlist adiciona rolagem também, mas só renderiza o que cabe na tela, os outros itens renderiza aos poucos, quando ele aparece na tela, melhor desempenho para listas grandes
     )
 }
