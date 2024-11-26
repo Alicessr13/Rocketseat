@@ -16,3 +16,6 @@ não criar projetos em pastas sincronizadas (ex: one drive google drive)
 npm i = instala a pasta node_modules de novo
 
 npx expo start = inicia o projeto
+
+hooks = use estados e outros recursos do react sem escrever uma classe, exemplo: useState(armazena estado), useEffect
+nome do hook começa com use e em camelCase exemplo: useNomeDoHook
