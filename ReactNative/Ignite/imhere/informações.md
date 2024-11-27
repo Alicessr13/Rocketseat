@@ -19,3 +19,9 @@ npx expo start = inicia o projeto
 
 hooks = use estados e outros recursos do react sem escrever uma classe, exemplo: useState(armazena estado), useEffect
 nome do hook começa com use e em camelCase exemplo: useNomeDoHook
+
+estudar imutabilidade react (substitui o valor antigo pelo novo valor, influencia novas renderizações)
+
+antes dos componentes aparecerem na tela eles são renderizados
+
+componente renderiza quando a aplicação e acionada ou quando o estado/propriedade muda, depois da renderização inicial ele renderiza somente o que muda

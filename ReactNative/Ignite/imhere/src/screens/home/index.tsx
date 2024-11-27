@@ -6,24 +6,35 @@ import { useState } from "react";
 export default function Home() {
 
     //const [estado, atualizaEstado] = useState();
-    const [participants, setParticipants] = useState(['Alice']);
+    const [participants, setParticipants] = useState<string[]>([]);
+    //<string[]> = define o tipo do array
+    const [participantName, setParticipantName] = useState('');
 
     function handleParticipantAdd() {
-        if (participants.includes("Alice")) {
+        if (participants.includes(participantName)) {
             return Alert.alert("Participante Existente", "Já existe um participante com esse nome");
             //return para/stop a função
         }
 
         //alterações nas variaveis tradicionais/simples não gera renderização para refletir nas váriaveis 
-        setParticipants(prevState => [...prevState, 'Rodrigo']);
+        setParticipants(prevState => [...prevState, participantName]);
+        // setparticipants + função que acessa o conteudo atual do estado e cria um novo array com o conteudo atual mais o conteudo novo
+        // ... para desestruturar, coloca o novo valor no mesmo nivel do que ja tinha
+
+        setParticipantName('');
     }
 
     function handleParticipantRemove(name: string) {
+        //return console.log(participants.filter(participant => participant !== name));
+
+
+
         //primeira posição titulo, segunda a mensagem, terceira botões da pra colocar um array com as condições
         Alert.alert("Removendo", `Remover o participante ${name}?`, [
             {
                 text: 'Sim',
-                onPress: () => Alert.alert('Deletado')
+                onPress: () => setParticipants(prevState => prevState.filter(participant => participant !== name))
+                //retorna para o estado todos os participantes menos o do filtro
             },
             {
                 text: 'Não',
@@ -31,6 +42,10 @@ export default function Home() {
             }
         ]);
         console.log(`Você clicou no botão remover ${name}`);
+    }
+
+    function handleState(value: string) {
+
     }
 
     return ( //onde ficam os elementos, não pode retornar mais de um da pra usar <> </> 
@@ -48,6 +63,11 @@ export default function Home() {
                     style={styles.input}
                     placeholder="Nome do participante"
                     placeholderTextColor="#6b6b6b"
+                    onChangeText={setParticipantName}//pode passar só o nome da função que atualiza o estado
+                    //onChangeText={text => setParticipantName(text)}
+                    //dispara evento quando o texto do input muda, consigo alterar o texto atual do input
+
+                    value={participantName}
                 />
 
                 <TouchableOpacity style={styles.button} onPress={handleParticipantAdd}>
